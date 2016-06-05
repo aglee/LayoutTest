@@ -37,7 +37,6 @@
 
 	[super layout];
 	[self _maybeDoCustomLayoutOfSubviews];
-	self.needsLayout = YES;
 
 	QuietLog(@"+++ EXITING %s %@ #%zd", __PRETTY_FUNCTION__, self.name, s_count++);
 }
