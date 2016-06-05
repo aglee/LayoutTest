@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="TestWindowController">
+            <connections>
+                <outlet property="outerView" destination="J63-K1-CPg" id="9sj-gc-LpH"/>
+                <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="480" height="497"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <view key="contentView" id="se5-gp-TjO" userLabel="Window Content View">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="497"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="J63-K1-CPg" customClass="SimpleView">
+                        <rect key="frame" x="20" y="135" width="440" height="342"/>
+                    </customView>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KKL-8f-6Hf">
+                        <rect key="frame" x="14" y="87" width="142" height="32"/>
+                        <buttonCell key="cell" type="push" title="Reset Inner View" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="PUk-Hm-WI6">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="repositionInnerView:" target="-2" id="BZ6-YI-eqH"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fQh-y1-KKl">
+                        <rect key="frame" x="156" y="87" width="63" height="32"/>
+                        <buttonCell key="cell" type="push" title="Log" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sM2-Nk-byJ">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="logViewConstraints:" target="-2" id="f32-X4-eIy"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XZw-d8-Amf">
+                        <rect key="frame" x="219" y="87" width="156" height="32"/>
+                        <buttonCell key="cell" type="push" title="Exercise Ambiguity" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="R8Y-UG-r8v">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="exerciseInnerViewAmbiguity:" target="-2" id="lXc-de-vbG"/>
+                        </connections>
+                    </button>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="LWc-Ev-LE5">
+                        <rect key="frame" x="18" y="58" width="213" height="18"/>
+                        <buttonCell key="cell" type="check" title="outerView.autoresizesSubviews" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="dRd-Gu-Al7">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="forceLayout:" target="-2" id="aJI-09-lL1"/>
+                            <binding destination="-2" name="value" keyPath="outerView.autoresizesSubviews" id="R8e-1p-jOx"/>
+                        </connections>
+                    </button>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="9k4-FA-LW5">
+                        <rect key="frame" x="18" y="38" width="202" height="18"/>
+                        <buttonCell key="cell" type="check" title="outerView.usesCustomLayout" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ejT-oZ-nIs">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="forceLayout:" target="-2" id="nzi-4p-VqW"/>
+                            <binding destination="-2" name="value" keyPath="outerView.usesCustomLayout" id="Zoe-Lf-xlf"/>
+                        </connections>
+                    </button>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="otJ-Oi-qAI">
+                        <rect key="frame" x="18" y="18" width="344" height="18"/>
+                        <buttonCell key="cell" type="check" title="innerView.translatesAutoresizingMaskIntoConstraints" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="QM7-vC-rfS">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="forceLayout:" target="-2" id="3nb-xZ-hFt"/>
+                            <binding destination="-2" name="value" keyPath="innerView.translatesAutoresizingMaskIntoConstraints" id="bwl-Df-kbB"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="J63-K1-CPg" secondAttribute="trailing" constant="20" id="4OB-HQ-ETd"/>
+                    <constraint firstItem="J63-K1-CPg" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" id="6Of-sg-qJj"/>
+                    <constraint firstItem="LWc-Ev-LE5" firstAttribute="top" secondItem="KKL-8f-6Hf" secondAttribute="bottom" constant="20" symbolic="YES" id="6Wc-Bp-iaa"/>
+                    <constraint firstItem="LWc-Ev-LE5" firstAttribute="leading" secondItem="KKL-8f-6Hf" secondAttribute="leading" id="D6I-Pb-3Ok"/>
+                    <constraint firstItem="fQh-y1-KKl" firstAttribute="leading" secondItem="KKL-8f-6Hf" secondAttribute="trailing" constant="12" symbolic="YES" id="DG2-9i-Lgy"/>
+                    <constraint firstItem="XZw-d8-Amf" firstAttribute="baseline" secondItem="KKL-8f-6Hf" secondAttribute="baseline" id="NIu-RB-eK0"/>
+                    <constraint firstItem="KKL-8f-6Hf" firstAttribute="top" secondItem="J63-K1-CPg" secondAttribute="bottom" constant="20" id="W9a-Rj-0w8"/>
+                    <constraint firstItem="J63-K1-CPg" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="Zef-Iv-Idj"/>
+                    <constraint firstItem="LWc-Ev-LE5" firstAttribute="leading" secondItem="9k4-FA-LW5" secondAttribute="leading" id="a6D-Qm-FbK"/>
+                    <constraint firstItem="LWc-Ev-LE5" firstAttribute="leading" secondItem="otJ-Oi-qAI" secondAttribute="leading" id="ica-1Z-NLa"/>
+                    <constraint firstItem="XZw-d8-Amf" firstAttribute="leading" secondItem="fQh-y1-KKl" secondAttribute="trailing" constant="12" symbolic="YES" id="jmg-qG-YRN"/>
+                    <constraint firstItem="XZw-d8-Amf" firstAttribute="baseline" secondItem="fQh-y1-KKl" secondAttribute="baseline" id="m80-ty-cu6"/>
+                    <constraint firstItem="otJ-Oi-qAI" firstAttribute="top" secondItem="9k4-FA-LW5" secondAttribute="bottom" constant="6" symbolic="YES" id="nn0-dB-sej"/>
+                    <constraint firstItem="KKL-8f-6Hf" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="sGU-qv-xFp"/>
+                    <constraint firstAttribute="bottom" secondItem="otJ-Oi-qAI" secondAttribute="bottom" constant="20" symbolic="YES" id="uwQ-2Q-2MT"/>
+                    <constraint firstItem="9k4-FA-LW5" firstAttribute="top" secondItem="LWc-Ev-LE5" secondAttribute="bottom" constant="6" symbolic="YES" id="y6q-et-Ob8"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
+            </connections>
+            <point key="canvasLocation" x="288" y="394.5"/>
+        </window>
+        <userDefaultsController representsSharedInstance="YES" id="hlj-Pd-TlJ"/>
+    </objects>
+</document>

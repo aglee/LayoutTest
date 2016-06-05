@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSViewController">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="oHO-u3-3iE"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY" customClass="SimpleView">
+            <rect key="frame" x="0.0" y="0.0" width="218" height="170"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p9D-10-x4I">
+                    <rect key="frame" x="0.0" y="146" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="FIe-7R-Fhj"/>
+                        <constraint firstAttribute="width" constant="24" id="Hfv-kk-jjF"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSUser" id="NhF-Fs-e0R"/>
+                </imageView>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Umg-cy-Wg2">
+                    <rect key="frame" x="194" y="0.0" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="AWk-jT-d3s"/>
+                        <constraint firstAttribute="width" constant="24" id="Erg-iC-uG9"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSInfo" id="6iY-rt-VaH"/>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="keh-Ru-9VQ">
+                    <rect key="frame" x="20" y="74" width="178" height="22"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="center" title="Label" id="Oiy-ET-OtO">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="keh-Ru-9VQ" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="NdV-QK-Q8s"/>
+                <constraint firstItem="p9D-10-x4I" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="TeK-3q-pOu"/>
+                <constraint firstAttribute="trailing" secondItem="Umg-cy-Wg2" secondAttribute="trailing" id="Twg-Pq-RQ6"/>
+                <constraint firstItem="keh-Ru-9VQ" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="Vai-iC-pEK"/>
+                <constraint firstItem="p9D-10-x4I" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="agZ-31-e8Y"/>
+                <constraint firstAttribute="trailing" secondItem="keh-Ru-9VQ" secondAttribute="trailing" constant="20" symbolic="YES" id="cuS-EW-jfp"/>
+                <constraint firstAttribute="bottom" secondItem="Umg-cy-Wg2" secondAttribute="bottom" id="mXq-kl-wNX"/>
+            </constraints>
+            <point key="canvasLocation" x="144" y="261"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="NSInfo" width="32" height="32"/>
+        <image name="NSUser" width="32" height="32"/>
+    </resources>
+</document>
